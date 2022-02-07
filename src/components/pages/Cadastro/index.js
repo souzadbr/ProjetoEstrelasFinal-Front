@@ -6,22 +6,29 @@ export default class Cadastro extends Component {
 
   state = {
     model: {
-     nome: "",
-     email: "",
-     dataNascimento: "",
-     telefone: "",
-     cep: "",
-     genero: "",
-     senha: "",
-     preferencia: {
-      temPet: "",
-      tipoDePet: "",
-      fumante: "",
-      disponivelParaReceberUmZupper: "",
-      conteAlgoQueNaoPerguntamos: "",
-     },
+      nome: "",
+      email: "",
+      dataNascimento: "",
+      telefone: "",
+      cep: "",
+      genero: "",
+      senha: "",
+      preferencia: {
+        temPet: "",
+        tipoDePet: "",
+        fumante: "",
+        disponivelParaReceberUmZupper: "",
+        conteAlgoQueNaoPerguntamos: "",
+      },
     },
   };
+
+  setValues = (e, field) => {
+    const { model } = this.state;
+    model[field] = e.target.value;
+    this.setState({model});
+  };
+
   render() {
     return (
       <div className="Collector">
