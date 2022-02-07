@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Header from "./components/Header"
-
+import Login from './pages/Login';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 ReactDOM.render(
- <Header/> ,
+ <Login/> ,
   document.getElementById('root')
 );
 
