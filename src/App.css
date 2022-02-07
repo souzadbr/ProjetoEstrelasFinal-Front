@@ -1,0 +1,48 @@
+.App{
+    display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   margin: 2%;
+   margin-top: 2%;
+    
+  }
+  header {
+    text-align: center;
+  }
+  body{
+    background-color:rgb(12,52,85);
+    background-size: cover;
+  }
+  .Collector{
+  
+    float: right;
+    background-color: rgb(147,149,152, 0.6);
+    border-radius: 10px;
+    margin-bottom: 3%;
+    
+    min-width: 70%;
+    
+  
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    
+  }
+  .campo1{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .Login{
+  
+    float: right;
+    background-color: rgb(147,149,152, 0.6);
+    border-radius: 10px;
+    margin: 200px 300px;
+    
+    min-width: 70%;
+    
+  
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    
+  }
