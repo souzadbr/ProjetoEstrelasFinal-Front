@@ -1,11 +1,15 @@
 /* eslint-disable react/jsx-no-undef */
 import react, {Component} from "react";
 import {Form, FormGroup, Input, Label, Button} from "reactstrap"
+import Header from "../../components/Header";
+
 
 export default class Login extends Component{
     render(){
         return(
-            <div>
+            <div className="Collector">
+                <Header title="Área de Login Couch Zupper"/>
+                <hr/>
                <Form>
                <FormGroup>
                    <Label for="email">Email</Label>
