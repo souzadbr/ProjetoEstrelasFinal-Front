@@ -1,38 +1,35 @@
 .App{
-    display: flex;
+   display: flex;
    align-items: flex-start;
    justify-content: center;
    margin: 2%;
    margin-top: 2%;
     
   }
-  header {
+header {
     text-align: center;
   }
-  body{
+body{
     background-color:rgb(12,52,85);
     background-size: cover;
   }
-  .Collector{
-  
-    float: right;
-    background-color: rgb(147,149,152, 0.6);
-    border-radius: 10px;
-    margin-bottom: 3%;
+
+.Cadastro{
+
+  float: right;
+  background-color: rgb(147,149,152, 0.6);
+  border-radius: 10px;
+  margin-bottom: 3%;
+  color: rgb(255, 255, 255);
+  padding: 20px;
     
-    min-width: 70%;
-    
-  
-    color: rgb(255, 255, 255);
-    padding: 20px;
-    
-  }
-  .campo1{
+}
+.campo1{
     display: flex;
     justify-content: space-between;
-  }
+}
   
-  .Login{
+.Login{
   
     float: right;
     background-color: rgb(147,149,152, 0.6);
@@ -45,4 +42,5 @@
     color: rgb(255, 255, 255);
     padding: 20px;
     
-  }
+}
+
