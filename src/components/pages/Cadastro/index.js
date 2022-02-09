@@ -12,6 +12,7 @@ export default class Cadastro extends Component {
     };
   }
 
+  
   save = () => {
     const url = "http://localhost:8080/usuario";
     const data = {
@@ -40,19 +41,19 @@ export default class Cadastro extends Component {
 
     fetch(url, requestInfo)
       .then((response) => {
-        console.log("Cadastro efetuado com sucesso!")
-        console.log(data)
+        this.props.history.push("/");
         return response
       })
       .catch(e => {
         this.setState({ message: e.message });
       });
+      
   };
 
   render() {
     return (
       <div className="Cadastro">
-        <Header titulo="Cadastre-se" />
+        <Header title="Cadastre-se" />
         <hr />
 
         <Form>
@@ -150,7 +151,7 @@ export default class Cadastro extends Component {
                 </Label>
               </FormGroup>
               <FormGroup>
-                <Label for="tipoDePet"> Caso possua, qual o tipo do seu pet? </Label>
+                <Label for="tipoDePet"> Qual o tipo do seu pet? </Label>
                 <Input 
                 type="select" 
                 id="tipoDePet"
