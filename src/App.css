@@ -1,6 +1,6 @@
 .App{
    display: flex;
-   align-items: flex-start;
+   flex-direction: row;
    justify-content: center;
    margin: 2%;
    margin-top: 2%;
@@ -15,7 +15,7 @@ body{
     background-size: 10%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding: 5%;
+
   }
 .texto{
   text-align: center;
@@ -28,11 +28,55 @@ body{
   margin-bottom: 3%;
   color: rgb(255, 255, 255);
   padding: 20px;
+  width: 700px;
     
 }
-.campo1{
+.nomeEnascimento{
     display: flex;
     justify-content: space-between;
+}
+
+.pets{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.fumanteEdisponivel{
+  display: flex;
+  justify-content: left;
+}
+
+.fumante{
+  padding-left: 20%;
+}
+.senha{
+  padding-right: 2%;
+}
+.cep{
+  padding-right: 2%;
+}
+
+.disponivel{
+  padding-left: 15%;
+}
+
+.telefoneEgenero{
+  display: flex;
+  justify-content: space-between;
+}
+
+.senhaEcep{
+  display: flex;
+  justify-content: space-between;
+}
+.preferencias{
+  background-color: rgb(147,149,152, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.botao{
+  padding-top: 5%;
 }
   
 .Login{
@@ -40,7 +84,7 @@ body{
     float: right;
     background-color: rgb(147,149,152, 0.6);
     border-radius: 10px;
-    margin: 200px 300px;
+    margin: 100px 300px;
     
     width: 400px;
     min-width: 300px;
