@@ -11,9 +11,15 @@ header {
   }
 body{
     background-color:rgb(12,52,85);
-    background-size: cover;
+    background-image: url("../public/logo.png");
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 5%;
   }
-
+.texto{
+  text-align: center;
+}
 .Cadastro{
 
   float: right;
@@ -36,9 +42,9 @@ body{
     border-radius: 10px;
     margin: 200px 300px;
     
-    min-width: 15%;
-    
-  
+    width: 400px;
+    min-width: 300px;
+      
     color: rgb(255, 255, 255);
     padding: 20px;
     
