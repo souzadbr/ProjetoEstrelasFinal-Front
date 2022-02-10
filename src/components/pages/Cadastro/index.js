@@ -8,11 +8,11 @@ export default class Cadastro extends Component {
     super(props);
     this.state = {
       message: this.props.state ? this.state.message : '',
-      
+
     };
   }
 
-  
+
   save = () => {
     const url = "http://localhost:8080/usuario";
     const data = {
@@ -47,7 +47,7 @@ export default class Cadastro extends Component {
       .catch(e => {
         this.setState({ message: e.message });
       });
-      
+
   };
 
   render() {
@@ -140,10 +140,10 @@ export default class Cadastro extends Component {
           <div className="preferencias">
             <div>
               <FormGroup check>
-                <Input 
-                type="checkbox"
-                defaultChecked ={this.temPet = false}
-                onChange={(e) => (this.temPet = true)}
+                <Input
+                  type="checkbox"
+                  defaultChecked={this.temPet = false}
+                  onChange={(e) => (this.temPet = true)}
                 />
                 {' '}
                 <Label check>
@@ -152,10 +152,10 @@ export default class Cadastro extends Component {
               </FormGroup>
               <FormGroup>
                 <Label for="tipoDePet"> Qual o tipo do seu pet? </Label>
-                <Input 
-                type="select" 
-                id="tipoDePet"
-                onChange={(e) => (this.tipoDePet = e.target.value)}
+                <Input
+                  type="select"
+                  id="tipoDePet"
+                  onChange={(e) => (this.tipoDePet = e.target.value)}
                 >
                   <option selected>Selecione</option>
                   <option value="NENHUM">
@@ -179,10 +179,10 @@ export default class Cadastro extends Component {
                 </Input>
               </FormGroup>
               <FormGroup check>
-                <Input 
-                type="checkbox" 
-                defaultValue ={this.fumante = false}
-                onChange={(e) => (this.fumante = true)}
+                <Input
+                  type="checkbox"
+                  defaultValue={this.fumante = false}
+                  onChange={(e) => (this.fumante = true)}
                 />
                 {' '}
                 <Label check>
@@ -190,10 +190,10 @@ export default class Cadastro extends Component {
                 </Label>
               </FormGroup>
               <FormGroup check>
-                <Input 
-                type="checkbox" 
-                defaultValue ={this.disponivelParaReceberUmZupper = false}
-                onChange={(e) => (this.disponivelParaReceberUmZupper = true)}
+                <Input
+                  type="checkbox"
+                  defaultValue={this.disponivelParaReceberUmZupper = false}
+                  onChange={(e) => (this.disponivelParaReceberUmZupper = true)}
                 />
                 {' '}
                 <Label check>

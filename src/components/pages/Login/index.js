@@ -48,41 +48,41 @@ export default class Login extends Component {
         return (
             <div className="Login">
                 <div>
-                <Header title="Faça login" />
-                <hr />
-                {
-                    this.state.message !== '' ? (
-                        <Alert color="danger" className="text-center">
-                            {this.state.message}
-                        </Alert>
-                    ) : ''
-                }
-                <Form>
-                    <FormGroup>
-                        <Label for="email">Email</Label>
-                        <Input type="text" id="email" placeholder="Informe seu email:" onChange={e => this.email = e.target.value} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="password">Senha</Label>
-                        <Input type="password" id="password" placeholder="Informe a sua senha:" onChange={e => this.password = e.target.value} />
-                    </FormGroup>
-                    <Button color="primary" block onClick={this.signIn}>Entrar</Button>
-                </Form>
+                    <Header title="Faça login" />
+                    <hr />
+                    {
+                        this.state.message !== '' ? (
+                            <Alert color="danger" className="text-center">
+                                {this.state.message}
+                            </Alert>
+                        ) : ''
+                    }
+                    <Form>
+                        <FormGroup>
+                            <Label for="email">Email</Label>
+                            <Input type="text" id="email" placeholder="Informe seu email:" onChange={e => this.email = e.target.value} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="password">Senha</Label>
+                            <Input type="password" id="password" placeholder="Informe a sua senha:" onChange={e => this.password = e.target.value} />
+                        </FormGroup>
+                        <Button color="primary" block onClick={this.signIn}>Entrar</Button>
+                    </Form>
                 </div>
                 <div>
-                    <br/> <br/>
-                    <hr/>
+                    <br /> <br />
+                    <hr />
                     <h3 className="texto">
-                        Ainda não está cadastrado?                
+                        Ainda não está cadastrado?
                     </h3>
-                    <br/>
+                    <br />
                     <Button color="warning" block onClick={this.signUp}>
                         Cadastre-se
                     </Button>
                 </div>
-                
+
             </div>
-            
+
         );
     }
 }
