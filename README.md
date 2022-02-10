@@ -1,4 +1,4 @@
- <p align="center">    <img width="25%" height = "165px"  src="https://i.ibb.co/d68X5dD/logo-1.png">   </p>                               
+ <p>    <img width="25%" height = "165px"  src="https://i.ibb.co/d68X5dD/logo-1.png">   </p>                               
 
 **Pagina Web CouchZupper**
 
@@ -24,10 +24,11 @@ Link da API :https://github.com/souzadbr/ProjetoFinalEstrelas-
 ## Cadastro:
 
 **
-<a href="https://ibb.co/3h3Cfyz"><img src="https://i.ibb.co/QmgK8Fd/image-3.png" alt="image-3" border="0"></a>
+![enter image description here](https://i.ibb.co/0DH4VTS/Cadastro.png)
 
 ## Retorno e atualização de dados:
-<a href="https://ibb.co/0ywvJrq"><img src="https://i.ibb.co/GQhNPR7/image-2.png" alt="image-2" border="0"></a>
+![enter image description here](https://i.ibb.co/XxwMJtX/image-2.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
