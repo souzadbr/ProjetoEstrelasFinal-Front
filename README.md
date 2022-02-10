@@ -1,3 +1,33 @@
+ <p align="center">    <img width="25%" height = "165px"  src="https://i.ibb.co/d68X5dD/logo-1.png">   </p>                               
+
+**Pagina Web CouchZupper**
+
+**Descrição do Projeto** 
+Página web desenvolvida em React focada em consumir uma API que tem como objetivo encontrar hospedagens de Zuppers para Zuppers (seguindo o modelo "CouchSurfing": hospedagem gratuita, a idéia é intermediar a troca de cultura entre pessoas), pensando no fato de aplicação de termos Zuppers por todo Brasil, sendo assim um modo de instigar mais ainda o nosso pilar de #ZupperAjudaZupper, o turismo, o networking e o nosso modelo de liberdade através dessa troca de experiências. 
+Link da API :https://github.com/souzadbr/ProjetoFinalEstrelas- 
+
+**Funcionalidades:** 
+
+ - Pagina de Login;
+ - Página de Cadastro de novo usuário;
+ - Página que atualiza os dados do usuário e deleta esse usuário;
+
+**Imagens das Páginas:**
+**
+
+## Login:
+
+**
+![enter image description here](https://i.ibb.co/7C3v5cc/Login.png)
+**
+
+## Cadastro:
+
+**
+<a href="https://ibb.co/3h3Cfyz"><img src="https://i.ibb.co/QmgK8Fd/image-3.png" alt="image-3" border="0"></a>
+
+## Retorno e atualização de dados:
+<a href="https://ibb.co/0ywvJrq"><img src="https://i.ibb.co/GQhNPR7/image-2.png" alt="image-2" border="0"></a>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
