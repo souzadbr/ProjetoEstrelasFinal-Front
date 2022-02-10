@@ -187,3 +187,128 @@ class AtualizarDadosUsuario extends Component {
     }
 
 }
+
+class Dashboard extends Component {
+    url = "http://localhost:8080/usuario";
+
+    state = {
+        usuarios: [],
+        message: {
+            text: "",
+            alert: "",
+        },
+    };
+
+    componentDidMount() {
+        let token = localStorage.getItem("token");
+        const requestInfo = {
+            method: "GET",
+            headers: new Headers({
+                "Content-type": "application/json",
+                Authorization: token,
+            }),
+        };
+
+        fetch(this.url, requestInfo)
+            .then((response) => response.json())
+            .then((usuarios) => this.setState({ usuarios }))
+            .catch((e) => console.log(e));
+    }
+
+
+    save = (usuario) => {
+        let data = {
+            id: usuario.id,
+            nome: usuario.nome,
+            dataNascimento: usuario.dataNascimento,
+            cep: usuario.cep,
+            telefone: usuario.telefone,
+            genero: usuario.genero,
+
+        };
+
+        // Pegar token para atualizar valor
+        const token = localStorage.getItem("token");
+
+        const requestInfo = {
+            method: "PUT",
+            body: JSON.stringify(data),
+
+            headers: new Headers({
+                "Content-type": "application/json",
+                // enviar token na headers da requisição
+                Authorization: token,
+            }),
+
+        };
+
+
+        fetch(this.url + "/dados/" + data.id, requestInfo)
+            .then((response) => response.json())
+            .then((newUsuario) => {
+
+                this.setState({
+
+                    message: { text: "Dados atualizados com sucesso. ", alert: "success" },
+                });
+
+                this.timerMessage(3000);
+
+            })
+            .catch((e) => console.log(e));
+
+    };
+
+    timerMessage = (duration) => {
+        setTimeout(() => {
+            this.setState({ message: { text: "", alert: "" } });
+        }, duration);
+    };
+
+    delete = (id) => {
+        const token = localStorage.getItem("token");
+        const requestInfo = {
+            method: "DELETE",
+            headers: new Headers({
+                "Content-type": "application/json",
+                Authorization: token,
+            }),
+        };
+        fetch(`${this.url}/${id}`, requestInfo)
+            .then((rows) => {
+                const usuarios = this.state.usuarios.filter((usuario) => usuario.id !== id);
+                this.setState({
+                    usuarios,
+                    message: { text: "Usuário deletado com sucesso. ", alert: "danger" },
+                });
+                this.timerMessage(3000);
+            })
+            .catch((e) => console.log(e));
+    };
+
+    render() {
+        return (
+            <div>
+                {this.state.message.text !== "" ? (
+                    <Alert color={this.state.message.alert} className="text-center">
+                        {this.state.message.text}
+                    </Alert>
+                ) : (
+                    ""
+                )}
+                <div className="row">
+                    <div className="col-md-6 my-3">
+                        <h2 className="font-weight-bold text-center"></h2>
+                        <AtualizarDadosUsuario usuarioCreate={this.save} />
+                    </div>
+                    <div className="col-md-6 my-3">
+                        <h2 className="font-weight-bold text-center"></h2>
+                        <ListarUsuarios usuarios={this.state.usuarios} deleteUsuario={this.delete} />
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Dashboard;
