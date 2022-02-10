@@ -63,3 +63,127 @@ class ListarUsuarios extends Component {
         );
     }
 }
+
+class AtualizarDadosUsuario extends Component {
+
+    state = {
+        model: {
+            nome: "",
+            dataNascimento: "",
+            cep: "",
+            telefone: "",
+            genero: "",
+
+        },
+
+    };
+
+    componentWillMount() {
+        PubSub.subscribe("edit-usuario", (topic, usuario) => {
+            this.setState({ model: usuario });
+
+        });
+    }
+
+    setValues = (e, field) => {
+        const { model } = this.state;
+        model[field] = e.target.value;
+        this.setState({ model });
+    };
+
+    create = () => {
+        this.setState({ model: { id: "", nome: "", dataNascimento: "", cep: "", telefone: "", genero: "" } });
+        this.props.usuarioCreate(this.state.model);
+
+
+    };
+
+    render() {
+        return (
+            <div className="Dashboard">
+                <Header title="Atualize seus dados!" />
+                <hr />
+                <Form>
+                    <FormGroup>
+                        <div className="form-row">
+                            <Label for="nome"> Nome </Label>
+                            <Input
+                                id="nome"
+                                type="text"
+                                value={this.state.model.nome}
+                                placeholder="Informe seu nome"
+                                onChange={(e) => this.setValues(e, "nome")}
+                            />
+                        </div>
+                    </FormGroup>
+                    <FormGroup>
+                        <div className="form-row">
+                            <Label for="dataNascimento"> Data de Nascimento </Label>
+                            <Input
+                                id="dataNascimento"
+                                type="date"
+                                value={this.state.model.dataNascimento}
+                                placeholder="Informe sua data de nascimento"
+                                onChange={(e) => this.setValues(e, "dataNascimento")}
+                            />
+                        </div>
+                    </FormGroup>
+                    <FormGroup>
+                        <div className="form-row">
+                            <Label for="cep"> CEP </Label>
+                            <Input
+                                id="CEP"
+                                type="text"
+                                value={this.state.model.cep}
+                                placeholder="Informe seu CEP"
+                                onChange={(e) => this.setValues(e, "cep")}
+                            />
+                        </div>
+                    </FormGroup>
+                    <FormGroup>
+                        <div className="form-row">
+                            <Label for="telefone"> Telefone </Label>
+                            <Input
+                                id="telefone"
+                                type="tel"
+                                value={this.state.model.telefone}
+                                placeholder="Informe seu telefone"
+                                onChange={(e) => this.setValues(e, "telefone")}
+                            />
+                        </div>
+                    </FormGroup>
+                    <FormGroup>
+                        <div className="form-row">
+                            <Label for="genero"> Gênero </Label>
+                            <Input
+                                id="genero"
+                                type="select"
+                                value={this.state.model.genero}
+                                placeholder="Informe seu gênero"
+                                onChange={(e) => this.setValues(e, "genero")}
+                            >
+                                <option selected>Selecione</option>
+                                <option value="FEMININO">
+                                    Feminino
+                                </option>
+                                <option value="MASCULINO">
+                                    Masculino
+                                </option>
+                                <option value="NAO_BINARIO">
+                                    Não binário
+                                </option>
+                                <option value="OUTRO">
+                                    Outro
+                                </option>
+                            </Input>
+                        </div>
+                    </FormGroup>
+                    <Button color="primary" block onClick={this.create}>
+                        ATUALIZAR
+                    </Button>
+                </Form>
+            </div>
+        );
+    }
+
+}
