@@ -58,6 +58,75 @@ export default class Cadastro extends Component {
 
         <Form>
 
+
+          <FormGroup>
+            <Label for="email"> Email: </Label>
+            <Input
+              type="text"
+              id="email"
+              onChange={(e) => (this.email = e.target.value)}
+              placeholder="Seu email zup"
+            />
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="email"> Senha: </Label>
+            <Input
+              type="password"
+              id="senha"
+              onChange={(e) => (this.senha = e.target.value)}
+              placeholder="Digite uma senha"
+            />
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="telefone"> Telefone: </Label>
+            <Input
+              type="tel"
+              id="fone"
+              onChange={(e) => (this.telefone = e.target.value)}
+              placeholder="+xx (xx) x xxxx-xxxx"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="cep"> CEP: </Label>
+            <Input
+              type="text"
+              id="cep"
+              onChange={(e) => (this.cep = e.target.value)}
+              placeholder="Sem espaços nem -"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="genero"> Gênero: </Label>
+            <Input
+              type="select"
+              id="genero"
+              onChange={(e) => (this.genero = e.target.value)}
+            >
+              <option selected>Selecione</option>
+              <option value="FEMININO">
+                Feminino
+              </option>
+              <option value="MASCULINO">
+                Masculino
+              </option>
+              <option value="NAO_BINARIO">
+                Não binário
+              </option>
+              <option value="OUTRO">
+                Outro
+              </option>
+            </Input>
+          </FormGroup>
+          <div className="preferencias">
+            <div>
+              <FormGroup check>
+                <Input
+                  type="checkbox"
+                  defaultChecked={this.temPet = false}
+                  onChange={(e) => (this.temPet = true)}
+
           <div className="dados">
             <div className="nomeEnascimento">
               <FormGroup>
@@ -67,9 +136,17 @@ export default class Cadastro extends Component {
                   id="nome"
                   onChange={(e) => (this.nome = e.target.value)}
                   placeholder="Seu nome completo"
+
                 />
               </FormGroup>
               <FormGroup>
+
+                <Label for="tipoDePet"> Qual o tipo do seu pet? </Label>
+                <Input
+                  type="select"
+                  id="tipoDePet"
+                  onChange={(e) => (this.tipoDePet = e.target.value)}
+
                 <Label for="dataNascimento"> Data de Nascimento: </Label>
                 <Input
                   type="date"
@@ -83,6 +160,7 @@ export default class Cadastro extends Component {
                   type="select"
                   id="genero"
                   onChange={(e) => (this.genero = e.target.value)}
+
                 >
                   <option selected>Selecione</option>
                   <option value="FEMININO">
@@ -99,6 +177,24 @@ export default class Cadastro extends Component {
                   </option>
                 </Input>
               </FormGroup>
+
+              <FormGroup check>
+                <Input
+                  type="checkbox"
+                  defaultValue={this.fumante = false}
+                  onChange={(e) => (this.fumante = true)}
+                />
+                {' '}
+                <Label check>
+                  É Fumante?
+                </Label>
+              </FormGroup>
+              <FormGroup check>
+                <Input
+                  type="checkbox"
+                  defaultValue={this.disponivelParaReceberUmZupper = false}
+                  onChange={(e) => (this.disponivelParaReceberUmZupper = true)}
+
             </div>
             <FormGroup >
               <Label for="email"> Email: </Label>
@@ -141,6 +237,7 @@ export default class Cadastro extends Component {
                   id="fone"
                   onChange={(e) => (this.telefone = e.target.value)}
                   placeholder="+xx (xx) x xxxx-xxxx"
+
                 />
               </FormGroup>
             </div>
